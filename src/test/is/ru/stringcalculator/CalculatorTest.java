@@ -18,6 +18,12 @@ public class CalculatorTest{
 
     @Test
     public void testTwoNumbers(){
+      assertEquals(3,Calculator.add("1,2"));
+
+    }
+
+    @Test
+    public void testXNumbers(){
       assertEquals(6,Calculator.add("1,2,3"));
 
     }
