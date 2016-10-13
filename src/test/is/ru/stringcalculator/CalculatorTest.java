@@ -11,8 +11,13 @@ public class CalculatorTest{
   }
 
   @Test
-  public void testSingleNumber(){
+  public void testSingleNumbers(){
     assertEquals(1,Calculator.add("1"));
   }
-//zup dsfs 
+
+
+    @Test
+    public void testTwoNumbers(){
+      assertEquals(3,Calculator.add("1,2"));
+    }
 }
