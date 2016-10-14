@@ -37,4 +37,13 @@ public class CalculatorTest{
     assertEquals(3,Calculator.add("1001,3"));
     assertEquals(50,Calculator.add("2500,10,40,"));
   }
+
+  @Test
+  public void testDelimiter(){
+  	assertEquals(3, Calculator.add("//;\n1;2"));
+  	assertEquals(7, Calculator.add("//<\n3<4"));
+  }
+
+  
+
 }

@@ -7,7 +7,15 @@ public class Calculator {
 			{
     		return 0;
     	}
-    	else if(text.contains(","))
+			else if(text.startsWith("//"))
+			{
+				String cleanText = String.valueOf(text.charAt(2));
+				text = text.replace(cleanText,",");
+				text = text.replace("//", "0");
+				text = text.replace("\n","");
+			}
+
+    	 if(text.contains(","))
 			{
           if(text.contains("-"))
             {
@@ -19,7 +27,13 @@ public class Calculator {
 
     					throw new IllegalArgumentException("Negatives not allowed: " + str);
             }
-        return sum(splitNumbers(text));
+						else if(text.contains("\n"))
+						{
+    					text = text.replace("\n", ",");
+    					return sum(splitNumbers(text));
+    				}
+
+        	return sum(splitNumbers(text));
     	}
     	else{
     		return 1;
