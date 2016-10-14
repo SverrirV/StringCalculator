@@ -63,7 +63,10 @@ public class Calculator {
   		return numbers.split(",");
   	}
 		//check if nuumber is greather than 1000.
-
+		private static boolean checkSize(int number)
+		{
+			return !(number > 1000);
+		}
 
 		//Sum numbers
   	private static int sum(String[] numbers)
@@ -71,7 +74,10 @@ public class Calculator {
   		int total = 0;
   		for(String number : numbers)
 			{
-  				total += toInt(number);				
+				if(checkSize(toInt(number)))
+				{
+  				total += toInt(number);
+				}
   		}
   		return total;
   	}

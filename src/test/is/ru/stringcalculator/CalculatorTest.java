@@ -32,4 +32,9 @@ public class CalculatorTest{
     assertEquals(-4, Calculator.add("2,-4,3,-5"));
   }
 
+  @Test
+  public void testXSmallerThan1000(){
+    assertEquals(3,Calculator.add("1001,3"));
+    assertEquals(50,Calculator.add("2500,10,40,"));
+  }
 }
